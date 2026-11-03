@@ -1,0 +1,2349 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090a0c">
+<title>VÉRTICE | Horlogerie</title>
+<meta name="description" content="Vértice Horlogerie. Descubra a arte da relojoaria mecânica e nossa coleção de relógios exclusivos.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --black: #090a0c;
+  --dark: #111317;
+  --panel: #181b20;
+  --silver: #c5c9ce;
+  --white: #f1f1ef;
+  --muted: #858a92;
+  --line: rgba(255,255,255,.12);
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--sans);
+  overflow-x:hidden;
+}
+
+button, input { font:inherit; }
+button { cursor:pointer; }
+a { color:inherit; text-decoration:none; }
+
+.container {
+  width:min(1200px, 90%);
+  margin:auto;
+}
+
+.eyebrow {
+  color:var(--silver);
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.section-title {
+  font-family:var(--serif);
+  font-size:clamp(38px,5vw,64px);
+  font-weight:400;
+  line-height:1.05;
+}
+
+.section-subtitle {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  max-width:500px;
+  margin-top:18px;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:15px 24px;
+  border:1px solid var(--silver);
+  background:var(--silver);
+  color:#101114;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.btn:hover {
+  background:transparent;
+  color:var(--white);
+}
+
+.btn-outline {
+  background:transparent;
+  color:var(--white);
+  border-color:var(--line);
+}
+
+.btn-outline:hover {
+  background:var(--silver);
+  color:var(--black);
+}
+
+/* HEADER */
+
+header {
+  height:82px;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  background:rgba(9,10,12,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav {
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo {
+  font-family:var(--serif);
+  font-size:27px;
+  letter-spacing:5px;
+  color:#fff;
+}
+
+.logo small {
+  display:block;
+  font-family:var(--sans);
+  font-size:8px;
+  letter-spacing:4px;
+  color:var(--muted);
+  text-align:center;
+  margin-top:-3px;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+
+.nav-links a {
+  font-size:10px;
+  color:#b9bbc0;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.nav-links a:hover { color:white; }
+
+.nav-actions {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.icon-btn {
+  background:none;
+  border:0;
+  color:white;
+  font-size:20px;
+  position:relative;
+}
+
+.cart-count {
+  position:absolute;
+  top:-8px;
+  right:-9px;
+  background:#c5c9ce;
+  color:#090a0c;
+  font-size:9px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+}
+
+.menu-toggle {
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:24px;
+}
+
+/* HERO */
+
+.hero {
+  min-height:750px;
+  padding-top:82px;
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 75% 45%,#272c33 0%,#111317 35%,#090a0c 75%);
+}
+
+.hero-content {
+  padding:80px 0;
+  position:relative;
+  z-index:2;
+}
+
+.hero h1 {
+  font-family:var(--serif);
+  font-size:clamp(60px,8vw,110px);
+  line-height:.9;
+  font-weight:400;
+  margin:25px 0;
+}
+
+.hero h1 span {
+  color:#aeb4bc;
+  display:block;
+  font-style:italic;
+}
+
+.hero-description {
+  color:#a0a4aa;
+  font-size:13px;
+  line-height:2;
+  max-width:370px;
+  margin-bottom:35px;
+}
+
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.hero-note {
+  margin-top:60px;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#686e76;
+}
+
+/* EXPLODED WATCH CSS ILLUSTRATION */
+
+.exploded-scene {
+  height:560px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  perspective:900px;
+}
+
+.watch-part {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  transition:transform 1.4s cubic-bezier(.2,.8,.2,1);
+}
+
+.watch-part svg {
+  width:100%;
+  height:100%;
+  overflow:visible;
+  filter:drop-shadow(0 12px 16px rgba(0,0,0,.5));
+}
+
+.watch-strap {
+  width:100px;
+  height:210px;
+  border:2px solid #858b93;
+  border-radius:25px;
+  background:repeating-linear-gradient(
+    0deg,#333940 0,#333940 7px,#707781 8px,#252a30 11px
+  );
+  box-shadow:inset 0 0 15px #111;
+}
+
+.strap-top { transform:translate(-50%,-165%) rotate(-3deg); }
+.strap-bottom { transform:translate(-50%,65%) rotate(3deg); }
+
+.watch-case {
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#edf0f3,#656c75,#dfe3e7,#515861);
+  padding:12px;
+  box-shadow:0 0 50px #9da8b31c,0 25px 45px #000;
+  transform:translate(-50%,-50%) translateX(65px);
+}
+
+.watch-face {
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:radial-gradient(circle,#343b43,#101317 75%);
+  border:3px solid #8c929a;
+  position:relative;
+  overflow:hidden;
+}
+
+.face-ring {
+  position:absolute;
+  inset:12px;
+  border:1px solid #8b929b;
+  border-radius:50%;
+}
+
+.face-center {
+  position:absolute;
+  width:7px;
+  height:7px;
+  background:#e5e8ea;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  z-index:5;
+}
+
+.face-hand {
+  position:absolute;
+  height:55px;
+  width:2px;
+  background:#e4e7ea;
+  left:50%;
+  top:50%;
+  transform-origin:bottom;
+}
+
+.hand-one { transform:translate(-50%,-100%) rotate(35deg); }
+.hand-two { transform:translate(-50%,-100%) rotate(150deg); height:72px; }
+
+.gear {
+  border:4px dotted #c8cdd2;
+  border-radius:50%;
+  background:radial-gradient(circle,#6f7780 0 12%,#252b32 13% 45%,#a9b0b8 46% 50%,transparent 51%);
+  box-shadow:0 0 20px #b5c0cd22;
+}
+
+.gear-one { width:75px;height:75px;transform:translate(-50%,-50%) translate(-155px,-95px); }
+.gear-two { width:57px;height:57px;transform:translate(-50%,-50%) translate(145px,110px); }
+.gear-three { width:43px;height:43px;transform:translate(-50%,-50%) translate(145px,-120px); }
+
+.movement {
+  width:160px;
+  height:160px;
+  border:2px solid #a8afb8;
+  border-radius:50%;
+  background:repeating-conic-gradient(#343b43 0deg 8deg,#151a20 8deg 16deg);
+  transform:translate(-50%,-50%) translate(-100px,20px);
+  box-shadow:inset 0 0 20px #000;
+}
+
+.movement::before {
+  content:"";
+  position:absolute;
+  inset:20px;
+  border:2px solid #9ba3ad;
+  border-radius:50%;
+}
+
+.movement::after {
+  content:"";
+  position:absolute;
+  inset:52px;
+  border:5px dotted #d4d8dd;
+  border-radius:50%;
+}
+
+.floating-screw {
+  width:10px;
+  height:10px;
+  background:linear-gradient(135deg,#fff,#6f7680);
+  border-radius:50%;
+}
+
+.screw-one { transform:translate(-50%,-50%) translate(-140px,155px); }
+.screw-two { transform:translate(-50%,-50%) translate(175px,-180px); }
+
+.hero-caption {
+  position:absolute;
+  bottom:35px;
+  right:0;
+  color:#7d838b;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+@keyframes float {
+  0%,100% { translate:0 0; }
+  50% { translate:0 -12px; }
+}
+
+.exploded-scene .gear,
+.exploded-scene .movement,
+.exploded-scene .floating-screw {
+  animation:float 5s ease-in-out infinite;
+}
+
+/* MARQUEE */
+
+.marquee {
+  padding:22px 0;
+  overflow:hidden;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#101216;
+}
+
+.marquee-content {
+  display:flex;
+  justify-content:space-around;
+  gap:50px;
+  white-space:nowrap;
+  color:#8d939c;
+  font-family:var(--serif);
+  font-size:19px;
+  letter-spacing:3px;
+}
+
+/* COLLECTION */
+
+.section {
+  padding:110px 0;
+}
+
+.section-header {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:50px;
+}
+
+.carousel-controls {
+  display:flex;
+  gap:10px;
+}
+
+.carousel-controls button {
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:white;
+  font-size:19px;
+}
+
+.carousel-controls button:hover {
+  background:#c5c9ce;
+  color:#090a0c;
+}
+
+.products-track {
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc(25% - 17px);
+  gap:22px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding-bottom:10px;
+}
+
+.products-track::-webkit-scrollbar { display:none; }
+
+.product-card {
+  min-width:0;
+  cursor:pointer;
+}
+
+.product-image {
+  height:290px;
+  background:#15191e;
+  position:relative;
+  overflow:hidden;
+}
+
+.product-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s;
+  filter:brightness(.85);
+}
+
+.product-card:hover img { transform:scale(1.07); }
+
+.product-tag {
+  position:absolute;
+  top:15px;
+  left:15px;
+  font-size:9px;
+  letter-spacing:2px;
+  background:#0c0e11cc;
+  padding:8px 10px;
+  color:#ddd;
+}
+
+.product-info {
+  padding:18px 0;
+}
+
+.product-info small {
+  color:#858b94;
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.product-info h3 {
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:400;
+  margin:8px 0;
+}
+
+.product-info p {
+  font-size:12px;
+  color:#b4b8be;
+}
+
+.product-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:15px;
+}
+
+.product-bottom strong {
+  font-size:13px;
+  font-weight:500;
+}
+
+.add-btn {
+  background:transparent;
+  color:white;
+  border:1px solid var(--line);
+  padding:10px 12px;
+  font-size:10px;
+  transition:.3s;
+}
+
+.add-btn:hover {
+  background:white;
+  color:black;
+}
+
+/* FEATURE */
+
+.feature {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:570px;
+  background:#14171c;
+}
+
+.feature-image {
+  min-height:500px;
+  overflow:hidden;
+}
+
+.feature-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(30%) brightness(.8);
+}
+
+.feature-content {
+  padding:80px 10%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.feature-content p {
+  color:#999fa7;
+  font-size:13px;
+  line-height:2;
+  margin:25px 0 35px;
+}
+
+/* COMPONENTS */
+
+.components {
+  background:#0d0f12;
+}
+
+.component-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.component-visual {
+  min-height:470px;
+  position:relative;
+  background:radial-gradient(circle,#292f36,#101216 70%);
+  display:grid;
+  place-items:center;
+}
+
+.component-visual img {
+  width:85%;
+  height:85%;
+  object-fit:contain;
+  filter:grayscale(1);
+}
+
+.component-list {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:35px;
+}
+
+.component-btn {
+  text-align:left;
+  padding:18px;
+  background:#171b20;
+  border:1px solid transparent;
+  color:#eee;
+  transition:.3s;
+}
+
+.component-btn:hover,
+.component-btn.active {
+  border-color:#aeb4bc;
+  background:#22272e;
+}
+
+.component-btn small {
+  display:block;
+  color:#828a94;
+  font-size:9px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+.component-btn strong {
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:400;
+}
+
+.component-description {
+  min-height:95px;
+  margin-top:25px;
+  color:#a2a8b0;
+  font-size:12px;
+  line-height:2;
+}
+
+/* HISTORY */
+
+.history {
+  background:#14171b;
+}
+
+.timeline {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  margin-top:65px;
+  position:relative;
+}
+
+.timeline::before {
+  content:"";
+  position:absolute;
+  top:9px;
+  left:0;
+  right:0;
+  height:1px;
+  background:#5d636c;
+}
+
+.timeline-item {
+  position:relative;
+  padding:35px 20px 0 0;
+}
+
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  top:3px;
+  left:0;
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  background:#d1d5da;
+  box-shadow:0 0 0 6px #242930;
+}
+
+.timeline-item span {
+  color:#aeb4bc;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.timeline-item h3 {
+  font-family:var(--serif);
+  font-size:24px;
+  font-weight:400;
+  margin:15px 0;
+}
+
+.timeline-item p {
+  color:#8f969e;
+  font-size:11px;
+  line-height:1.9;
+}
+
+/* BRAND */
+
+.brand-section {
+  text-align:center;
+  padding:130px 20px;
+  background:
+    linear-gradient(#080a0dcc,#080a0ddd),
+    url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1800') center/cover;
+}
+
+.brand-section .section-title { margin:25px 0; }
+
+.brand-section p {
+  color:#b3b8bf;
+  max-width:550px;
+  margin:0 auto 30px;
+  font-size:13px;
+  line-height:2;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+  text-align:center;
+  padding:100px 20px;
+  background:#15191e;
+}
+
+.newsletter p {
+  color:#939aa3;
+  font-size:12px;
+  margin:18px 0 30px;
+}
+
+.newsletter-form {
+  display:flex;
+  max-width:450px;
+  margin:auto;
+}
+
+.newsletter-form input {
+  min-width:0;
+  flex:1;
+  padding:16px;
+  background:#0d0f12;
+  border:1px solid var(--line);
+  color:white;
+  outline:none;
+}
+
+.newsletter-form button {
+  padding:0 20px;
+  border:0;
+  background:#c5c9ce;
+  color:#090a0c;
+  font-size:10px;
+  letter-spacing:1px;
+}
+
+/* FOOTER */
+
+footer {
+  padding:65px 0 25px;
+  background:#08090b;
+  border-top:1px solid var(--line);
+}
+
+.footer-grid {
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:45px;
+  padding-bottom:55px;
+}
+
+.footer-about p {
+  color:#828992;
+  font-size:11px;
+  line-height:2;
+  max-width:280px;
+  margin-top:20px;
+}
+
+.footer-column h4 {
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:20px;
+  color:#ddd;
+}
+
+.footer-column a {
+  display:block;
+  color:#858b93;
+  font-size:11px;
+  margin:13px 0;
+}
+
+.footer-column a:hover { color:white; }
+
+.footer-bottom {
+  border-top:1px solid var(--line);
+  padding-top:25px;
+  display:flex;
+  justify-content:space-between;
+  color:#646a72;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+/* CART DRAWER */
+
+.overlay {
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:200;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
+
+.overlay.open { opacity:1; visibility:visible; }
+
+.cart-drawer {
+  position:fixed;
+  z-index:201;
+  top:0;
+  right:-450px;
+  width:min(420px,100%);
+  height:100%;
+  background:#111418;
+  padding:30px;
+  transition:.4s;
+  overflow-y:auto;
+}
+
+.cart-drawer.open { right:0; }
+
+.drawer-header {
+  display:flex;
+  justify-content:space-between;
+  padding-bottom:25px;
+  border-bottom:1px solid var(--line);
+}
+
+.drawer-header h2 {
+  font-family:var(--serif);
+  font-size:30px;
+  font-weight:400;
+}
+
+.close-btn {
+  background:none;
+  border:0;
+  color:white;
+  font-size:25px;
+}
+
+.cart-item {
+  display:grid;
+  grid-template-columns:75px 1fr auto;
+  gap:15px;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.cart-item img {
+  width:75px;
+  height:85px;
+  object-fit:cover;
+}
+
+.cart-item h4 {
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:400;
+}
+
+.cart-item p {
+  color:#aab0b8;
+  font-size:11px;
+  margin-top:5px;
+}
+
+.qty {
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top:10px;
+}
+
+.qty button {
+  background:none;
+  border:1px solid var(--line);
+  color:white;
+  width:25px;
+  height:25px;
+}
+
+.remove-btn {
+  border:0;
+  background:none;
+  color:#888;
+  font-size:17px;
+}
+
+.cart-total {
+  padding:25px 0;
+  display:flex;
+  justify-content:space-between;
+}
+
+.cart-total strong { font-size:17px; }
+
+.checkout-btn { width:100%; }
+
+.empty-cart {
+  text-align:center;
+  color:#8d949d;
+  padding:70px 10px;
+  font-size:13px;
+}
+
+/* PRODUCT MODAL */
+
+.modal {
+  position:fixed;
+  z-index:210;
+  inset:0;
+  background:#000d;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.open { display:flex; }
+
+.modal-content {
+  background:#15191e;
+  max-width:850px;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  max-height:90vh;
+  overflow:auto;
+}
+
+.modal-content img {
+  width:100%;
+  height:100%;
+  min-height:420px;
+  object-fit:cover;
+}
+
+.modal-info { padding:45px 35px; }
+
+.modal-info h2 {
+  font-family:var(--serif);
+  font-size:38px;
+  font-weight:400;
+  margin:15px 0;
+}
+
+.modal-info p {
+  color:#a4abb3;
+  font-size:12px;
+  line-height:2;
+  margin:20px 0;
+}
+
+.modal-info .price {
+  font-size:19px;
+  margin-bottom:25px;
+}
+
+.modal-close {
+  position:absolute;
+  top:12px;
+  right:15px;
+  z-index:3;
+  background:#090a0c;
+  border:0;
+  color:white;
+  width:35px;
+  height:35px;
+  font-size:22px;
+}
+
+/* TOAST */
+
+.toast {
+  position:fixed;
+  z-index:300;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,100px);
+  background:#e0e3e7;
+  color:#111;
+  padding:14px 24px;
+  font-size:11px;
+  letter-spacing:1px;
+  transition:.4s;
+}
+
+.toast.show { transform:translate(-50%,0); }
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+  .nav-links { gap:15px; }
+  .products-track { grid-auto-columns:calc(50% - 12px); }
+  .hero { grid-template-columns:1fr 1fr; }
+  .exploded-scene { transform:scale(.8); }
+  .component-layout { gap:30px; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+}
+
+@media(max-width:650px) {
+  header { height:70px; }
+  .menu-toggle { display:block; }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    padding:25px;
+    background:#101216;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid var(--line);
+  }
+
+  .nav-links.open { display:flex; }
+
+  .nav-links a { padding:8px 0; }
+
+  .hero {
+    grid-template-columns:1fr;
+    padding-top:70px;
+    min-height:auto;
+  }
+
+  .hero-content { padding:80px 0 10px; }
+  .hero h1 { font-size:75px; }
+
+  .exploded-scene {
+    height:390px;
+    transform:scale(.78);
+    margin-top:-20px;
+  }
+
+  .hero-caption { bottom:5px; }
+
+  .section { padding:75px 0; }
+
+  .section-header {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .products-track { grid-auto-columns:78%; }
+  .product-image { height:280px; }
+
+  .feature { grid-template-columns:1fr; }
+  .feature-image { min-height:350px; }
+  .feature-content { padding:60px 8%; }
+
+  .component-layout { grid-template-columns:1fr; }
+  .component-visual { min-height:320px; }
+
+  .timeline {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .timeline::before {
+    top:0;
+    bottom:0;
+    left:6px;
+    right:auto;
+    width:1px;
+    height:auto;
+  }
+
+  .timeline-item { padding:0 0 0 35px; }
+  .timeline-item::before { top:3px; }
+
+  .footer-grid { grid-template-columns:1fr 1fr; gap:35px 20px; }
+
+  .footer-bottom {
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .modal-content { grid-template-columns:1fr; }
+  .modal-content img { min-height:250px; height:250px; }
+  .modal-info { padding:30px 25px; }
+
+  .marquee-content { justify-content:flex-start; }
+}
+
+/* THREE.JS WATCH */
+.watch3d-wrap {
+  width:100%;
+  height:560px;
+  position:relative;
+  overflow:hidden;
+  background:radial-gradient(ellipse at center,#252b32 0%,#11151a 48%,#090a0c 80%);
+}
+#watch3d {
+  display:block;
+  width:100%;
+  height:100%;
+  cursor:grab;
+  touch-action:pan-y;
+  outline:none;
+}
+#watch3d:active { cursor:grabbing; }
+.watch3d-label {
+  position:absolute;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:2;
+}
+.watch3d-label span:first-child {
+  font-size:9px;
+  letter-spacing:4px;
+  color:#d4d8de;
+}
+.watch3d-label span:last-child {
+  font-size:8px;
+  letter-spacing:2px;
+  color:#737d88;
+}
+.assemble-control {
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#c5c9ce;
+  color:#101317;
+  border:1px solid #e3e5e8;
+  padding:13px 20px;
+  font-size:9px;
+  letter-spacing:2px;
+  transition:.3s;
+  white-space:nowrap;
+  z-index:5;
+}
+.assemble-control:hover {
+  background:transparent;
+  color:white;
+}
+.watch3d-wrap .hero-caption {
+  bottom:35px;
+  right:20px;
+  pointer-events:none;
+}
+@media(max-width:900px) {
+  .watch3d-wrap { height:500px; }
+}
+@media(max-width:650px) {
+  .watch3d-wrap { height:430px; }
+  .watch3d-label { top:15px; }
+  .assemble-control { bottom:20px; padding:12px 15px; }
+  .watch3d-wrap .hero-caption { display:none; }
+}
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">
+      VÉRTICE
+      <small>HORLOGERIE</small>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Início</a>
+      <a href="#collection">Coleção</a>
+      <a href="#engineering">Engenharia</a>
+      <a href="#history">História</a>
+      <a href="#brand">A marca</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" onclick="openCart()" aria-label="Abrir carrinho">
+        ♧
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="eyebrow">A arte da relojoaria</span>
+
+    <h1>
+      Beyond
+      <span>Time.</span>
+    </h1>
+
+    <p class="hero-description">
+      Mais do que instrumentos para medir o tempo.
+      Obras de engenharia concebidas para atravessar gerações.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#collection" class="btn">Explorar coleção ↗</a>
+      <a href="#engineering" class="btn btn-outline">Nossa engenharia</a>
+    </div>
+
+    <div class="hero-note">
+      PRECISION · CRAFTSMANSHIP · HERITAGE
+    </div>
+  </div>
+
+  <div class="watch3d-wrap">
+    <canvas id="watch3d" aria-label="Modelo 3D interativo de um relógio mecânico desmontado"></canvas>
+    <div class="watch3d-label">
+      <span>VÉRTICE ENGINEERING</span>
+      <span>CALIBRE 001 · AUTOMATIC</span>
+    </div>
+    <button class="assemble-control" id="assembleWatch" type="button">
+      DESMONTAR RELÓGIO ↗
+    </button>
+    <div class="hero-caption">MECHANICAL ART / 001</div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="container marquee-content">
+    <span>VÉRTICE HORLOGERIE</span>
+    <span>✧</span>
+    <span>MADE TO ENDURE</span>
+    <span>✧</span>
+    <span>THE ART OF PRECISION</span>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+
+<section class="section" id="collection">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">Nossa seleção</span>
+        <h2 class="section-title">The Collection.</h2>
+        <p class="section-subtitle">
+          Cada criação expressa uma interpretação única da precisão,
+          da elegância e da engenharia mecânica.
+        </p>
+      </div>
+
+      <div class="carousel-controls">
+        <button onclick="moveCarousel(-1)" aria-label="Anterior">←</button>
+        <button onclick="moveCarousel(1)" aria-label="Próximo">→</button>
+      </div>
+    </div>
+
+    <div class="products-track" id="productsTrack"></div>
+
+  </div>
+</section>
+
+<!-- FEATURE -->
+
+<section class="feature" id="engineering">
+  <div class="feature-image">
+    <img
+      src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=1000"
+      alt="Detalhes de um relógio mecânico"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="feature-content">
+    <span class="eyebrow">A essência da precisão</span>
+
+    <h2 class="section-title">
+      Engineering<br>
+      meets Art.
+    </h2>
+
+    <p>
+      Por trás de cada movimento existe uma arquitetura complexa.
+      Engrenagens, molas e componentes trabalham em perfeita
+      harmonia para transformar energia em precisão.
+    </p>
+
+    <a href="#components" class="btn btn-outline" style="width:max-content">
+      Descobrir componentes ↗
+    </a>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+
+<section class="section components" id="components">
+  <div class="container">
+
+    <div class="component-layout">
+
+      <div>
+        <span class="eyebrow">Anatomia de um relógio</span>
+        <h2 class="section-title">Every part<br>has a purpose.</h2>
+
+        <p class="section-subtitle">
+          Selecione um componente e descubra o papel que ele
+          desempenha na construção de um relógio mecânico.
+        </p>
+
+        <div class="component-list" id="componentList"></div>
+
+        <div class="component-description" id="componentDescription">
+          Selecione uma peça para conhecer sua função.
+        </div>
+      </div>
+
+      <div class="component-visual">
+        <img
+          src="https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=900"
+          alt="Detalhe de mecanismo de relógio"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+
+<section class="section history" id="history">
+  <div class="container">
+    <span class="eyebrow">Uma jornada através dos séculos</span>
+    <h2 class="section-title">The History of Time.</h2>
+
+    <p class="section-subtitle">
+      A relojoaria evoluiu através de séculos de descobertas,
+      criatividade e aperfeiçoamento técnico.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <span>SÉCULO XVI</span>
+        <h3>Os primeiros portáteis</h3>
+        <p>O desenvolvimento de mecanismos menores tornou possível a criação dos primeiros relógios portáteis.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>SÉCULO XVIII</span>
+        <h3>A precisão</h3>
+        <p>Avanços na construção de mecanismos transformaram a precisão em uma grande busca da relojoaria.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>SÉCULO XIX</span>
+        <h3>A indústria</h3>
+        <p>A produção evoluiu, permitindo novas técnicas e maior acesso aos relógios.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>SÉCULO XX</span>
+        <h3>O pulso</h3>
+        <p>Os relógios de pulso conquistaram espaço e se tornaram símbolos de estilo e funcionalidade.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span>SÉCULO XXI</span>
+        <h3>Nova engenharia</h3>
+        <p>Materiais avançados e novas tecnologias ampliaram as possibilidades da relojoaria.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BRAND -->
+
+<section class="brand-section" id="brand">
+  <span class="eyebrow">Nossa filosofia</span>
+
+  <h2 class="section-title">Beyond generations.</h2>
+
+  <p>
+    A VÉRTICE nasceu de uma ideia: o verdadeiro luxo não está
+    apenas na aparência, mas naquilo que existe por trás dela.
+    Nossa identidade celebra a tradição mecânica, a precisão
+    e a beleza dos detalhes.
+  </p>
+
+  <a href="#collection" class="btn btn-outline">Conheça nossas criações</a>
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+  <span class="eyebrow">VÉRTICE Journal</span>
+  <h2 class="section-title">A timeless connection.</h2>
+
+  <p>
+    Receba novidades sobre coleções, engenharia e o universo da relojoaria.
+  </p>
+
+  <form class="newsletter-form" id="newsletterForm">
+    <input type="email" placeholder="Seu endereço de e-mail" required>
+    <button type="submit">INSCREVER</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <a href="#home" class="logo">
+          VÉRTICE
+          <small>HORLOGERIE</small>
+        </a>
+
+        <p>
+          A arte de transformar engenharia em algo eterno.
+          Uma nova perspectiva sobre o tempo.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>EXPLORAR</h4>
+        <a href="#collection">Coleção</a>
+        <a href="#engineering">Engenharia</a>
+        <a href="#history">História</a>
+        <a href="#brand">Nossa marca</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>ATENDIMENTO</h4>
+        <a href="mailto:contato@verticehorlogerie.com">Contato</a>
+        <a href="#collection">Produtos</a>
+        <a href="#brand">Sobre nós</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>INFORMAÇÕES</h4>
+        <a href="#collection">Garantia</a>
+        <a href="#collection">Entrega</a>
+        <a href="#collection">Privacidade</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 VÉRTICE HORLOGERIE. TODOS OS DIREITOS RESERVADOS.</span>
+      <span>THE ART OF TIME.</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- OVERLAY -->
+
+<div class="overlay" id="overlay" onclick="closePanels()"></div>
+
+<!-- CART -->
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="drawer-header">
+    <h2>Your Selection.</h2>
+    <button class="close-btn" onclick="closePanels()">×</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-total">
+    <span>Total</span>
+    <strong id="cartTotal">R$ 0,00</strong>
+  </div>
+
+  <button class="btn checkout-btn" onclick="checkout()">
+    Finalizar pedido ↗
+  </button>
+
+  <p style="font-size:10px;color:#777;margin-top:15px;text-align:center">
+    Checkout demonstrativo. Nenhum pagamento será processado.
+  </p>
+</aside>
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal" onclick="if(event.target===this)closeProduct()">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeProduct()">×</button>
+    <img id="modalImage" src="" alt="Relógio selecionado">
+
+    <div class="modal-info">
+      <span class="eyebrow" id="modalCategory"></span>
+      <h2 id="modalName"></h2>
+      <div class="price" id="modalPrice"></div>
+      <p id="modalDescription"></p>
+      <div id="modalSpecs" style="font-size:11px;color:#aab0b8;line-height:2;margin-bottom:25px"></div>
+
+      <button class="btn" id="modalAdd">
+        Adicionar ao carrinho
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Produto adicionado ao carrinho.</div>
+
+<script>
+
+// ======================================
+// PRODUTOS
+// ======================================
+
+const products = [
+  {
+    id:1,
+    name:"Aeternum I",
+    category:"AUTOMATIC",
+    price:4890,
+    image:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800",
+    description:"Uma interpretação contemporânea da relojoaria clássica. Design refinado e presença marcante.",
+    movement:"Automático",
+    material:"Aço inoxidável",
+    water:"5 ATM"
+  },
+  {
+    id:2,
+    name:"Noctis",
+    category:"SKELETON",
+    price:7290,
+    image:"https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=800",
+    description:"Uma arquitetura mecânica que revela a beleza de seus mecanismos através de um mostrador aberto.",
+    movement:"Automático skeleton",
+    material:"Aço escovado",
+    water:"5 ATM"
+  },
+  {
+    id:3,
+    name:"Monarch",
+    category:"CLASSIC",
+    price:3590,
+    image:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800",
+    description:"Linhas tradicionais e proporções equilibradas para uma elegância atemporal.",
+    movement:"Quartzo",
+    material:"Aço inoxidável",
+    water:"3 ATM"
+  },
+  {
+    id:4,
+    name:"Obsidian",
+    category:"LIMITED",
+    price:8990,
+    image:"https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800",
+    description:"Uma criação de presença imponente, acabamento escuro e identidade contemporânea.",
+    movement:"Automático",
+    material:"Aço com revestimento escuro",
+    water:"10 ATM"
+  },
+  {
+    id:5,
+    name:"Silverline",
+    category:"CLASSIC",
+    price:4290,
+    image:"https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800",
+    description:"Minimalismo e precisão em uma peça de inspiração clássica.",
+    movement:"Automático",
+    material:"Aço inoxidável",
+    water:"5 ATM"
+  },
+  {
+    id:6,
+    name:"Eclipse",
+    category:"SKELETON",
+    price:9990,
+    image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800",
+    description:"Uma expressão sofisticada da engenharia mecânica e do design contemporâneo.",
+    movement:"Automático skeleton",
+    material:"Aço e cristal de safira",
+    water:"5 ATM"
+  }
+];
+
+let cart = [];
+let selectedProduct = null;
+
+// ======================================
+// FORMATAÇÃO
+// ======================================
+
+function money(value) {
+  return value.toLocaleString("pt-BR", {
+    style:"currency",
+    currency:"BRL"
+  });
+}
+
+// ======================================
+// RENDERIZAR PRODUTOS
+// ======================================
+
+function renderProducts() {
+  const track = document.getElementById("productsTrack");
+
+  track.innerHTML = products.map(product => `
+    <article class="product-card">
+      <div class="product-image" onclick="openProduct(${product.id})">
+        <span class="product-tag">${product.category}</span>
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+      </div>
+
+      <div class="product-info">
+        <small>VÉRTICE COLLECTION</small>
+        <h3>${product.name}</h3>
+        <p>${product.movement}</p>
+
+        <div class="product-bottom">
+          <strong>${money(product.price)}</strong>
+          <button class="add-btn" onclick="addToCart(${product.id})">
+            + ADICIONAR
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+// ======================================
+// CARROSSEL
+// ======================================
+
+function moveCarousel(direction) {
+  const track = document.getElementById("productsTrack");
+
+  track.scrollBy({
+    left:direction * track.clientWidth * .75,
+    behavior:"smooth"
+  });
+}
+
+// ======================================
+// DETALHES DO PRODUTO
+// ======================================
+
+function openProduct(id) {
+  const product = products.find(p => p.id === id);
+  selectedProduct = product;
+
+  document.getElementById("modalImage").src = product.image;
+  document.getElementById("modalName").textContent = product.name;
+  document.getElementById("modalCategory").textContent = product.category;
+  document.getElementById("modalPrice").textContent = money(product.price);
+  document.getElementById("modalDescription").textContent = product.description;
+
+  document.getElementById("modalSpecs").innerHTML = `
+    <div>Movimento: ${product.movement}</div>
+    <div>Material: ${product.material}</div>
+    <div>Resistência declarada: ${product.water}</div>
+  `;
+
+  document.getElementById("modalAdd").onclick = () => {
+    addToCart(product.id);
+    closeProduct();
+  };
+
+  document.getElementById("productModal").classList.add("open");
+}
+
+function closeProduct() {
+  document.getElementById("productModal").classList.remove("open");
+}
+
+// ======================================
+// CARRINHO
+// ======================================
+
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  const existing = cart.find(item => item.id === id);
+
+  if(existing) {
+    existing.quantity++;
+  } else {
+    cart.push({...product, quantity:1});
+  }
+
+  updateCart();
+  showToast("Produto adicionado ao carrinho.");
+}
+
+function updateCart() {
+  const container = document.getElementById("cartItems");
+  const count = cart.reduce((sum,item) => sum + item.quantity,0);
+
+  document.getElementById("cartCount").textContent = count;
+
+  if(cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        Seu carrinho está vazio.<br><br>
+        Descubra nossa coleção.
+      </div>
+    `;
+  } else {
+    container.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+
+        <div>
+          <h4>${item.name}</h4>
+          <p>${money(item.price)}</p>
+
+          <div class="qty">
+            <button onclick="changeQuantity(${item.id},-1)">−</button>
+            <span>${item.quantity}</span>
+            <button onclick="changeQuantity(${item.id},1)">+</button>
+          </div>
+        </div>
+
+        <button class="remove-btn" onclick="removeItem(${item.id})">×</button>
+      </div>
+    `).join("");
+  }
+
+  const total = cart.reduce(
+    (sum,item) => sum + item.price * item.quantity,0
+  );
+
+  document.getElementById("cartTotal").textContent = money(total);
+}
+
+function changeQuantity(id,amount) {
+  const item = cart.find(p => p.id === id);
+  if(!item) return;
+
+  item.quantity += amount;
+
+  if(item.quantity <= 0) {
+    cart = cart.filter(p => p.id !== id);
+  }
+
+  updateCart();
+}
+
+function removeItem(id) {
+  cart = cart.filter(p => p.id !== id);
+  updateCart();
+}
+
+function openCart() {
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("cartDrawer").classList.add("open");
+}
+
+function closePanels() {
+  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("cartDrawer").classList.remove("open");
+}
+
+// ======================================
+// CHECKOUT DEMONSTRATIVO
+// ======================================
+
+function checkout() {
+  if(cart.length === 0) {
+    showToast("Seu carrinho está vazio.");
+    return;
+  }
+
+  const total = cart.reduce(
+    (sum,item) => sum + item.price * item.quantity,0
+  );
+
+  const order = cart.map(item =>
+    `${item.name} - Quantidade: ${item.quantity} - ${money(item.price * item.quantity)}`
+  ).join("\n");
+
+  const message = 
+    "PEDIDO DEMONSTRATIVO - VÉRTICE\n\n" +
+    order +
+    "\n\nTOTAL: " + money(total) +
+    "\n\nEste é apenas um resumo de demonstração.";
+
+  alert(message);
+}
+
+// ======================================
+// EXPLORADOR DE COMPONENTES
+// ======================================
+
+const components = [
+  {
+    name:"Movement",
+    type:"01 / MECANISMO",
+    description:"O movimento é o conjunto mecânico responsável por fazer o relógio funcionar. Ele coordena os componentes e controla a medição do tempo."
+  },
+  {
+    name:"Balance Wheel",
+    type:"02 / REGULADOR",
+    description:"O balanço oscila de maneira regular e participa da regulação da marcha do relógio, trabalhando em conjunto com a espiral."
+  },
+  {
+    name:"Mainspring",
+    type:"03 / ENERGIA",
+    description:"A mola principal armazena energia mecânica, que é liberada gradualmente para alimentar o mecanismo."
+  },
+  {
+    name:"Gear Train",
+    type:"04 / TRANSMISSÃO",
+    description:"O trem de engrenagens transmite a energia pelo movimento, conectando diferentes partes do mecanismo."
+  },
+  {
+    name:"Dial",
+    type:"05 / MOSTRADOR",
+    description:"O mostrador organiza as informações visuais do relógio e define boa parte de sua identidade estética."
+  },
+  {
+    name:"Hands",
+    type:"06 / INDICAÇÃO",
+    description:"Os ponteiros indicam as horas, os minutos e, dependendo do modelo, os segundos."
+  },
+  {
+    name:"Case",
+    type:"07 / PROTEÇÃO",
+    description:"A caixa abriga e protege o mecanismo. Pode ser fabricada em diferentes metais e materiais."
+  },
+  {
+    name:"Crystal",
+    type:"08 / VISIBILIDADE",
+    description:"O cristal protege o mostrador. O cristal de safira é valorizado por sua elevada resistência a riscos."
+  }
+];
+
+function renderComponents() {
+  const list = document.getElementById("componentList");
+
+  list.innerHTML = components.map((component,index) => `
+    <button class="component-btn ${index === 0 ? 'active' : ''}"
+      onclick="selectComponent(${index})">
+
+      <small>${component.type}</small>
+      <strong>${component.name}</strong>
+    </button>
+  `).join("");
+
+  document.getElementById("componentDescription").textContent =
+    components[0].description;
+}
+
+function selectComponent(index) {
+  const buttons = document.querySelectorAll(".component-btn");
+
+  buttons.forEach((button,i) => {
+    button.classList.toggle("active",i === index);
+  });
+
+  document.getElementById("componentDescription").textContent =
+    components[index].description;
+}
+
+// ======================================
+// MENU MOBILE
+// ======================================
+
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click",() => {
+    document.getElementById("navLinks").classList.remove("open");
+  });
+});
+
+// ======================================
+// NEWSLETTER DEMONSTRATIVA
+// ======================================
+
+document.getElementById("newsletterForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+  showToast("Inscrição demonstrativa realizada.");
+  this.reset();
+});
+
+// ======================================
+// NOTIFICAÇÃO
+// ======================================
+
+let toastTimeout;
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimeout);
+
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove("show");
+  },2500);
+}
+
+// ======================================
+// INICIALIZAÇÃO
+// ======================================
+
+renderProducts();
+renderComponents();
+updateCart();
+
+</script>
+
+
+
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const canvas = document.getElementById("watch3d");
+const stage = document.querySelector(".watch3d-wrap");
+const assembleButton = document.getElementById("assembleWatch");
+
+if (canvas && stage && window.gsap) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x11151a);
+
+  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+  camera.position.set(0.2, 0.25, 10.8);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: false
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.25;
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.055;
+  controls.enablePan = false;
+  controls.minDistance = 8;
+  controls.maxDistance = 14;
+  controls.minPolarAngle = Math.PI * 0.28;
+  controls.maxPolarAngle = Math.PI * 0.72;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.45;
+
+  scene.add(new THREE.HemisphereLight(0xdce7f5, 0x171a20, 2.1));
+
+  const keyLight = new THREE.DirectionalLight(0xffffff, 3.2);
+  keyLight.position.set(4, 6, 8);
+  scene.add(keyLight);
+
+  const rimLight = new THREE.PointLight(0x8eadd0, 24, 18);
+  rimLight.position.set(-5, 1, -3);
+  scene.add(rimLight);
+
+  const silver = new THREE.MeshStandardMaterial({
+    color: 0xbfc6ce, metalness: 0.92, roughness: 0.24
+  });
+  const polished = new THREE.MeshStandardMaterial({
+    color: 0xe5e9ee, metalness: 1, roughness: 0.12
+  });
+  const darkMetal = new THREE.MeshStandardMaterial({
+    color: 0x252c34, metalness: 0.88, roughness: 0.3
+  });
+  const blackMetal = new THREE.MeshStandardMaterial({
+    color: 0x101419, metalness: 0.8, roughness: 0.22
+  });
+  const gold = new THREE.MeshStandardMaterial({
+    color: 0xb99a62, metalness: 0.9, roughness: 0.22
+  });
+  const glass = new THREE.MeshPhysicalMaterial({
+    color: 0xcbd8e5, metalness: 0.15, roughness: 0.06,
+    transmission: 0.72, transparent: true, opacity: 0.24,
+    thickness: 0.2, ior: 1.45
+  });
+
+  const watch = new THREE.Group();
+  scene.add(watch);
+  const animatedParts = [];
+
+  function addPart(name, target, spread, rotation = {x:0,y:0,z:0}) {
+    const group = new THREE.Group();
+    group.name = name;
+    group.position.set(target.x + spread.x, target.y + spread.y, target.z + spread.z);
+    group.rotation.set(rotation.x, rotation.y, rotation.z);
+    watch.add(group);
+    animatedParts.push({
+      group,
+      target: {x:target.x, y:target.y, z:target.z},
+      targetRotation: {x:rotation.x, y:rotation.y, z:rotation.z},
+      spread: {x:spread.x, y:spread.y, z:spread.z}
+    });
+    return group;
+  }
+
+  function cylinder(parent, radiusTop, radiusBottom, depth, material, z = 0, radial = 96) {
+    const mesh = new THREE.Mesh(
+      new THREE.CylinderGeometry(radiusTop, radiusBottom, depth, radial),
+      material
+    );
+    mesh.rotation.x = Math.PI / 2;
+    mesh.position.z = z;
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    parent.add(mesh);
+    return mesh;
+  }
+
+  function gear(parent, radius, z, material = silver, teeth = 12) {
+    const g = new THREE.Group();
+    g.position.z = z;
+    parent.add(g);
+
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(radius * 0.78, radius * 0.105, 8, 48),
+      material
+    );
+    g.add(ring);
+
+    const hub = new THREE.Mesh(
+      new THREE.CylinderGeometry(radius * 0.22, radius * 0.22, 0.07, 24),
+      polished
+    );
+    hub.rotation.x = Math.PI / 2;
+    g.add(hub);
+
+    for (let i = 0; i < teeth; i++) {
+      const angle = (i / teeth) * Math.PI * 2;
+      const tooth = new THREE.Mesh(
+        new THREE.BoxGeometry(radius * 0.22, radius * 0.12, 0.07),
+        material
+      );
+      tooth.position.set(Math.cos(angle) * radius * 0.94, Math.sin(angle) * radius * 0.94, 0);
+      tooth.rotation.z = angle;
+      g.add(tooth);
+    }
+
+    for (let i = 0; i < 4; i++) {
+      const spoke = new THREE.Mesh(
+        new THREE.BoxGeometry(radius * 0.09, radius * 1.12, 0.045),
+        material
+      );
+      spoke.rotation.z = (i / 4) * Math.PI;
+      g.add(spoke);
+    }
+    return g;
+  }
+
+  // Pulseira superior e inferior: elos metálicos separados em camadas.
+  const topStrap = addPart("bracelet-top",
+    {x:0,y:2.05,z:0}, {x:-0.3,y:2.2,z:-0.9});
+  const bottomStrap = addPart("bracelet-bottom",
+    {x:0,y:-2.05,z:0}, {x:0.35,y:-2.25,z:-0.8});
+
+  function buildStrap(parent, direction) {
+    for (let i = 0; i < 7; i++) {
+      const link = new THREE.Mesh(
+        new THREE.BoxGeometry(0.72, 0.27, 0.24),
+        i % 2 ? silver : darkMetal
+      );
+      link.position.y = direction * (i * 0.29);
+      link.castShadow = true;
+      parent.add(link);
+      const center = new THREE.Mesh(
+        new THREE.BoxGeometry(0.08, 0.22, 0.255),
+        polished
+      );
+      center.position.set(0, direction * (i * 0.29), 0.015);
+      parent.add(center);
+    }
+  }
+  buildStrap(topStrap, 1);
+  buildStrap(bottomStrap, -1);
+
+  // Caixa, aro e mostrador.
+  const caseGroup = addPart("case",
+    {x:0,y:0,z:0.05}, {x:2.35,y:0.45,z:-0.8});
+  cylinder(caseGroup, 1.43, 1.43, 0.42, darkMetal, 0);
+  cylinder(caseGroup, 1.36, 1.36, 0.12, polished, 0.25);
+  cylinder(caseGroup, 1.27, 1.27, 0.08, blackMetal, 0.34);
+
+  const bezel = addPart("bezel",
+    {x:0,y:0,z:0.42}, {x:-2.3,y:0.35,z:1.35});
+  const bezelRing = new THREE.Mesh(
+    new THREE.TorusGeometry(1.28, 0.105, 16, 120), silver
+  );
+  bezelRing.position.z = 0;
+  bezel.add(bezelRing);
+  const innerRing = new THREE.Mesh(
+    new THREE.TorusGeometry(1.17, 0.018, 8, 120), gold
+  );
+  innerRing.position.z = 0.015;
+  bezel.add(innerRing);
+
+  const dial = addPart("dial",
+    {x:0,y:0,z:0.48}, {x:0.1,y:2.2,z:1.15});
+  cylinder(dial, 1.16, 1.16, 0.045, blackMetal, 0);
+
+  // Índices horários.
+  const markers = new THREE.Group();
+  dial.add(markers);
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * Math.PI * 2;
+    const marker = new THREE.Mesh(
+      new THREE.BoxGeometry(i % 3 === 0 ? 0.075 : 0.035, i % 3 === 0 ? 0.19 : 0.12, 0.025),
+      i % 3 === 0 ? gold : polished
+    );
+    marker.position.set(Math.sin(a) * 0.98, Math.cos(a) * 0.98, 0.045);
+    marker.rotation.z = -a;
+    markers.add(marker);
+  }
+
+  const dialTextRing = new THREE.Mesh(
+    new THREE.TorusGeometry(0.76, 0.008, 6, 80), silver
+  );
+  dialTextRing.position.z = 0.05;
+  dial.add(dialTextRing);
+
+  // Placa do mecanismo e engrenagens visíveis.
+  const movement = addPart("movement-plate",
+    {x:0,y:0,z:-0.18}, {x:-2.4,y:-0.55,z:-1.3});
+  cylinder(movement, 1.02, 1.02, 0.12, silver, 0);
+  cylinder(movement, 0.88, 0.88, 0.035, darkMetal, 0.08);
+
+  const gearPositions = [
+    {x:-0.48,y:0.35,r:0.32},
+    {x:0.38,y:0.48,r:0.24},
+    {x:0.48,y:-0.35,r:0.34},
+    {x:-0.35,y:-0.48,r:0.2}
+  ];
+  const gears = [];
+  gearPositions.forEach((p, i) => {
+    const gearGroup = addPart("gear-" + i,
+      {x:p.x,y:p.y,z:0.12 + i * 0.018},
+      {x:(i % 2 ? 2.1 : -2.1),y:(i < 2 ? 1.8 : -1.8),z:1.8 + i * 0.25});
+    const actualGear = gear(gearGroup, p.r, 0, i % 2 ? gold : polished, 12);
+    gears.push(actualGear);
+  });
+
+  // Ponteiros e eixo central.
+  const hands = addPart("hands",
+    {x:0,y:0,z:0.62}, {x:2.25,y:-1.6,z:1.4});
+  const hourHand = new THREE.Mesh(
+    new THREE.BoxGeometry(0.075, 0.48, 0.035), polished
+  );
+  hourHand.position.set(-0.12, 0.12, 0.04);
+  hourHand.rotation.z = -0.65;
+  hands.add(hourHand);
+
+  const minuteHand = new THREE.Mesh(
+    new THREE.BoxGeometry(0.045, 0.72, 0.03), silver
+  );
+  minuteHand.position.set(0.13, 0.2, 0.065);
+  minuteHand.rotation.z = 0.55;
+  hands.add(minuteHand);
+
+  const pin = new THREE.Mesh(
+    new THREE.SphereGeometry(0.075, 24, 24), gold
+  );
+  pin.position.z = 0.11;
+  hands.add(pin);
+
+  // Coroa lateral.
+  const crown = addPart("crown",
+    {x:1.48,y:0,z:0}, {x:2.8,y:-0.4,z:0.7},
+    {x:0,y:0, z:Math.PI / 2});
+  const crownMesh = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.13, 0.13, 0.34, 32), polished
+  );
+  crownMesh.rotation.z = Math.PI / 2;
+  crownMesh.position.x = 0.03;
+  crown.add(crownMesh);
+  for (let i = 0; i < 7; i++) {
+    const groove = new THREE.Mesh(
+      new THREE.TorusGeometry(0.132, 0.012, 6, 32), darkMetal
+    );
+    groove.rotation.y = Math.PI / 2;
+    groove.position.x = -0.12 + i * 0.045;
+    crown.add(groove);
+  }
+
+  // Cristal frontal.
+  const crystal = addPart("crystal",
+    {x:0,y:0,z:0.66}, {x:0.15,y:-2.3,z:1.6});
+  cylinder(crystal, 1.19, 1.19, 0.035, glass, 0);
+
+  // Parafusos flutuantes em torno do conjunto.
+  const screws = addPart("screws",
+    {x:0,y:0,z:0.12}, {x:0,y:0,z:2.8});
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const screw = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.055, 0.055, 0.045, 24), polished
+    );
+    screw.rotation.x = Math.PI / 2;
+    screw.position.set(Math.cos(a) * 1.12, Math.sin(a) * 1.12, 0);
+    screws.add(screw);
+    const slot = new THREE.Mesh(
+      new THREE.BoxGeometry(0.06, 0.012, 0.012), blackMetal
+    );
+    slot.position.z = 0.03;
+    screw.add(slot);
+  }
+
+  let isAssembled = false;
+  let activeTimeline = null;
+
+  function animateAssembly(assemble) {
+    if (activeTimeline) activeTimeline.kill();
+    isAssembled = assemble;
+    assembleButton.textContent = assemble ? "DESMONTAR RELÓGIO ↗" : "MONTAR RELÓGIO ↗";
+
+    activeTimeline = gsap.timeline({defaults:{ease:"power3.inOut"}});
+    const ordered = assemble ? animatedParts : [...animatedParts].reverse();
+
+    ordered.forEach((part, index) => {
+      const destination = assemble
+        ? part.target
+        : {
+            x: part.target.x + part.spread.x,
+            y: part.target.y + part.spread.y,
+            z: part.target.z + part.spread.z
+          };
+      activeTimeline.to(part.group.position, {
+        x: destination.x,
+        y: destination.y,
+        z: destination.z,
+        duration: 1.25
+      }, index * 0.055);
+
+      if (part.group.name === "crown") {
+        activeTimeline.to(part.group.rotation, {
+          x: part.targetRotation.x,
+          y: part.targetRotation.y,
+          z: assemble ? part.targetRotation.z : part.targetRotation.z
+        }, index * 0.055);
+      }
+    });
+  }
+
+  assembleButton.addEventListener("click", () => {
+    animateAssembly(!isAssembled);
+  });
+
+  // Entrada cinematográfica: começa desmontado e se monta sozinho.
+  gsap.delayedCall(0.65, () => animateAssembly(true));
+
+  // Movimento sutil das engrenagens quando o relógio está montado.
+  const clock = new THREE.Clock();
+  function render() {
+    requestAnimationFrame(render);
+    const elapsed = clock.getElapsedTime();
+    if (isAssembled) {
+      gears.forEach((g, i) => {
+        g.rotation.z = elapsed * (i % 2 ? -0.45 : 0.45);
+      });
+    }
+    controls.update();
+    renderer.render(scene, camera);
+  }
+
+  function resizeScene() {
+    const width = stage.clientWidth;
+    const height = stage.clientHeight;
+    if (!width || !height) return;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  }
+
+  const resizeObserver = new ResizeObserver(resizeScene);
+  resizeObserver.observe(stage);
+  resizeScene();
+
+  ScrollTrigger.create({
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+    onUpdate: self => {
+      watch.rotation.y = self.progress * 0.12;
+    }
+  });
+
+  render();
+}
+</script>
+
+</body>
+</html>
